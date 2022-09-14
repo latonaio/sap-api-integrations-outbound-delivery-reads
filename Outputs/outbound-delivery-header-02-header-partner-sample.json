@@ -1,0 +1,26 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-outbound-delivery-reads/SAP_API_Caller/caller.go#L77",
+	"function": "sap-api-integrations-outbound-delivery-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": [
+		{
+			"AddressID": "23629",
+			"Customer": "1",
+			"PartnerFunction": "SP",
+			"SDDocument": "80000000",
+			"SDDocumentItem": "000000",
+			"Supplier": "",
+			"to_Address": "http://100.21.57.120:8080/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryPartner(PartnerFunction='SP',SDDocument='80000000')/to_Address"
+		},
+		{
+			"AddressID": "23629",
+			"Customer": "1",
+			"PartnerFunction": "SH",
+			"SDDocument": "80000000",
+			"SDDocumentItem": "000000",
+			"Supplier": "",
+			"to_Address": "http://100.21.57.120:8080/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryPartner(PartnerFunction='SH',SDDocument='80000000')/to_Address"
+		}
+	],
+	"time": "2022-09-14T15:33:07+09:00"
+}
