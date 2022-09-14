@@ -117,14 +117,76 @@ func (c *SAPAPICaller) AsyncGetOutboundDelivery(deliveryDocument, sDDocument, pa
 ## Output  
 本マイクロサービスでは、[golang-logging-library](https://github.com/latonaio/golang-logging-library) により、以下のようなデータがJSON形式で出力されます。  
 以下の sample.json の例は、SAP 出荷データ の ヘッダデータ が取得された結果の JSON の例です。  
-以下の項目のうち、"XXXXX" ～ "XXXXX" は、/SAP_API_Output_Formatter/type.go 内 の Type XXXXXXXX {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
+以下の項目のうち、"DeliveryDocument" ～ "to_DeliveryDocumentItem" は、/SAP_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
 
 ```
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-outbound-delivery-reads/SAP_API_Caller/caller.go#L50",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-outbound-delivery-reads/SAP_API_Caller/caller.go#L70",
 	"function": "sap-api-integrations-outbound-delivery-reads/SAP_API_Caller.(*SAPAPICaller).Header",
 	"level": "INFO",
-	"message": "[{XXXXXXXXXXXXXXXXXXXXXXXXXXXXX}]",
-	"time": "2021-12-11T15:33:00.054455+09:00"
+	"message": [
+		{
+			"DeliveryDocument": "80000000",
+			"DeliveryDocumentType": "LF",
+			"DocumentDate": "2022-09-14",
+			"ActualGoodsMovementDate": "",
+			"ActualDeliveryRoute": "",
+			"Shippinglocationtimezone": "CET",
+			"Receivinglocationtimezone": "JAPAN",
+			"ActualGoodsMovementTime": "PT00H00M00S",
+			"BillingDocumentDate": "2022-09-12",
+			"CompleteDeliveryIsDefined": false,
+			"ConfirmationTime": "PT00H00M00S",
+			"CreationDate": "2022-09-14",
+			"CreationTime": "PT13H26M11S",
+			"CustomerGroup": "",
+			"DeliveryBlockReason": "",
+			"DeliveryDate": "2022-09-12",
+			"DeliveryDocumentBySupplier": "",
+			"DeliveryIsInPlant": false,
+			"DeliveryPriority": "00",
+			"DeliveryTime": "PT16H00M00S",
+			"GoodsIssueOrReceiptSlipNumber": "",
+			"GoodsIssueTime": "PT16H00M00S",
+			"HeaderBillingBlockReason": "",
+			"HeaderGrossWeight": "2.000",
+			"HeaderNetWeight": "1.000",
+			"HeaderVolume": "0.000",
+			"HeaderVolumeUnit": "",
+			"HeaderWeightUnit": "KG",
+			"IncotermsClassification": "FH",
+			"IsExportDelivery": "X",
+			"LastChangeDate": "",
+			"LoadingDate": "2022-09-12",
+			"LoadingPoint": "",
+			"LoadingTime": "PT12H00M00S",
+			"MeansOfTransport": "",
+			"OrderCombinationIsAllowed": true,
+			"OrderID": "",
+			"OverallDelivConfStatus": "",
+			"OverallDelivReltdBillgStatus": "A",
+			"OverallGoodsMovementStatus": "A",
+			"OverallPackingStatus": "",
+			"OverallPickingConfStatus": "",
+			"OverallPickingStatus": "A",
+			"PickingDate": "2022-09-12",
+			"PickingTime": "PT06H00M00S",
+			"PlannedGoodsIssueDate": "2022-09-12",
+			"ReceivingPlant": "",
+			"ShippingCondition": "01",
+			"ShippingPoint": "0001",
+			"ShippingType": "",
+			"ShipToParty": "1",
+			"SoldToParty": "1",
+			"Supplier": "",
+			"TransportationGroup": "",
+			"TransportationPlanningDate": "2022-09-12",
+			"TransportationPlanningTime": "PT12H00M00S",
+			"to_DeliveryDocumentPartner": "http://100.21.57.120:8080/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader('80000000')/to_DeliveryDocumentPartner",
+			"to_DeliveryDocumentItem": "http://100.21.57.120:8080/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader('80000000')/to_DeliveryDocumentItem"
+		}
+	],
+	"time": "2022-09-14T15:33:07+09:00"
 }
+
 ```

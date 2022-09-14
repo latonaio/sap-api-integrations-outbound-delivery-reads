@@ -21,7 +21,7 @@ func main() {
 		gc,
 		l,
 	)
-	inputSDC := fr.ReadSDC("./Inputs/SDC_Outbound_Delivery_Header_sample.json")
+	inputSDC := fr.ReadSDC("./Inputs/SDC_Outbound_Delivery_Item_sample.json")
 	sap_api_time_value_converter.ChangeTimeFormatToSAPFormatStruct(&inputSDC)
 	accepter := inputSDC.Accepter
 	if len(accepter) == 0 || accepter[0] == "All" {
@@ -32,10 +32,10 @@ func main() {
 	}
 
 	caller.AsyncGetOutboundDelivery(
-		inoutSDC.OutboundDelivery.DeliveryDocument,
-		inoutSDC.OutboundDelivery.HeaderPartner.SDDocument,
-		inoutSDC.OutboundDelivery.HeaderPartner.PartnerFunction,
-		inoutSDC.OutboundDelivery.DeliveryDocumentItem.DeliveryDocumentItem,
+		inputSDC.OutboundDelivery.DeliveryDocument,
+		inputSDC.OutboundDelivery.HeaderPartner.SDDocument,
+		inputSDC.OutboundDelivery.HeaderPartner.PartnerFunction,
+		inputSDC.OutboundDelivery.DeliveryDocumentItem.DeliveryDocumentItem,
 		accepter,
 	)
 }
