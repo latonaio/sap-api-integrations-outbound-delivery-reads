@@ -1,7 +1,44 @@
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-outbound-delivery-reads/SAP_API_Caller/caller.go#L95",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-outbound-delivery-reads/SAP_API_Caller/caller.go#L98",
 	"function": "sap-api-integrations-outbound-delivery-reads/SAP_API_Caller.(*SAPAPICaller).Header",
-	"level": "ERROR",
-	"message": "convert error: Result data is not exist",
-	"time": "2022-09-14T15:33:08+09:00"
+	"level": "INFO",
+	"message": [
+		{
+			"Deliveryversion": "0003",
+			"PrecedingDocument": "80000000",
+			"PrecedingDocumentCategory": "J",
+			"PrecedingDocumentItem": "000010",
+			"Subsequentdocument": "1",
+			"QuantityInBaseUnit": "1.000",
+			"SubsequentDocumentItem": "000001",
+			"SDFulfillmentCalculationRule": "",
+			"SubsequentDocumentCategory": "Q",
+			"TransferOrderInWrhsMgmtIsConfd": true
+		},
+		{
+			"Deliveryversion": "0003",
+			"PrecedingDocument": "80000000",
+			"PrecedingDocumentCategory": "J",
+			"PrecedingDocumentItem": "000010",
+			"Subsequentdocument": "4900000010",
+			"QuantityInBaseUnit": "1.000",
+			"SubsequentDocumentItem": "000001",
+			"SDFulfillmentCalculationRule": "+",
+			"SubsequentDocumentCategory": "R",
+			"TransferOrderInWrhsMgmtIsConfd": false
+		},
+		{
+			"Deliveryversion": "0003",
+			"PrecedingDocument": "80000000",
+			"PrecedingDocumentCategory": "J",
+			"PrecedingDocumentItem": "000010",
+			"Subsequentdocument": "90000000",
+			"QuantityInBaseUnit": "1.000",
+			"SubsequentDocumentItem": "000010",
+			"SDFulfillmentCalculationRule": "+",
+			"SubsequentDocumentCategory": "M",
+			"TransferOrderInWrhsMgmtIsConfd": false
+		}
+	],
+	"time": "2022-09-15T09:45:14+09:00"
 }
