@@ -65,37 +65,38 @@ func (c *SAPAPICaller) Header(deliveryDocument string) {
 	headerData, err := c.callOutboundDeliverySrvAPIRequirementHeader("A_OutbDeliveryHeader", deliveryDocument)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(headerData)
 	}
-	c.log.Info(headerData)
 
 	headerPartnerData, err := c.callToHeaderPartner(headerData[0].ToHeaderPartner)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(headerPartnerData)
 	}
-	c.log.Info(headerPartnerData)
 	
 	partnerAddressData, err := c.callToPartnerAddress(headerPartnerData[0].ToPartnerAddress)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(partnerAddressData)
 	}
-	c.log.Info(partnerAddressData)
 	
 	itemData, err := c.callToItem(headerData[0].ToItem)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(itemData)
 	}
-	c.log.Info(itemData)
 	
 	itemDocumentFlowData, err := c.callToItemDocumentFlow(itemData[0].ToItemDocumentFlow)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(itemDocumentFlowData)
 	}
-	c.log.Info(itemDocumentFlowData)
+	return
 }
 
 func (c *SAPAPICaller) callOutboundDeliverySrvAPIRequirementHeader(api, deliveryDocument string) ([]sap_api_output_formatter.Header, error) {
@@ -180,16 +181,17 @@ func (c *SAPAPICaller) HeaderPartner(sDDocument, partnerFunction string) {
 	headerPartnerData, err := c.callOutboundDeliverySrvAPIRequirementHeaderPartner("A_OutbDeliveryHeader('%s')/to_DeliveryDocumentPartner", sDDocument, partnerFunction)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(headerPartnerData)
 	}
-	c.log.Info(headerPartnerData)
 
 	partnerAddressData, err := c.callToPartnerAddress2(headerPartnerData[0].ToPartnerAddress)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(partnerAddressData)
 	}
-	c.log.Info(partnerAddressData)
+	return	
 }
 
 
@@ -259,16 +261,16 @@ func (c *SAPAPICaller) Item(deliveryDocument, deliveryDocumentItem string) {
 	itemData, err := c.callOutboundDeliverySrvAPIRequirementItem("A_OutbDeliveryItem", deliveryDocument, deliveryDocumentItem)
 	if err != nil {
 		c.log.Error(err)
-		return
-	}
-	c.log.Info(itemData)
+	} else {
+		c.log.Info(itemData)
 
 	itemDocumentFlowData, err := c.callToItemDocumentFlow2(itemData[0].ToItemDocumentFlow)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+		c.log.Info(itemDocumentFlowData)
 	}
-	c.log.Info(itemDocumentFlowData)
+	return	
 }
 
 
